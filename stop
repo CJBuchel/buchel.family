@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "stopping rails server"
+# using WEBrick style kill call
+kill -INT $(cat tmp/pids/server.pid)
