@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BuchelFamily</title>
+    <title>Buchel Family</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('Blitzen.png') %>
+    <%= render "layouts/header" %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%# NAV BAR %>
+  <%= render "layouts/navbar" %>
+
+  <div class="container">
+    <body>
+      <%=yield %> <%# individually loaded pages %>
+    </body>
+  </div>
+  <%= render "layouts/footer" %>
 </html>
