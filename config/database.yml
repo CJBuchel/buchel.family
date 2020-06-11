@@ -9,24 +9,25 @@
 # And be sure to use new-style password hashing:
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
+
 default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  username: <%= Rails.application.credentials.dig(:development, :mysql_username) %>
+  password: <%= Rails.application.credentials.dig(:development, :mysql_password) %>
+  socket: <%= Rails.application.credentials.dig(:database, :socket) %>
 
 development:
   <<: *default
-  database: buchel_family_development
+  database: <%= Rails.application.credentials.dig(:database, :dev) %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: buchel_family_test
+  database: <%= Rails.application.credentials.dig(:database, :test) %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: buchel_family_production
+  database: <%= Rails.application.credentials.dig(:database, :prod) %>
   username: buchel_family
   password: <%= ENV['BUCHEL_FAMILY_DATABASE_PASSWORD'] %>
