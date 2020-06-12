@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: <%= Rails.application.credentials.dig(:database, :prod) %>
-  username: buchel_family
-  password: <%= ENV['BUCHEL_FAMILY_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.dig(:database, :dev) %>
+  username: <%= Rails.application.credentials.dig(:development, :mysql_username) %>
+  password: <%= Rails.application.credentials.dig(:development, :mysql_password) %>

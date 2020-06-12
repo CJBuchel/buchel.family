@@ -1,0 +1,32 @@
+<header class="container">
+
+  <%# Nav bar start %>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Blitzen</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "Home", root_path %></li>
+        <%# <li><a href="#">Page 1</a></li> %>
+        <%#<li><a href="#">Page 2</a></li> %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if signed_in? %>
+          <li><a><span class="glyphicon glyphicon-user"></span> Signed in as: <%= current_user.email %></a></li>
+          <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+        <% else %>
+          <li><a href=<%=sign_in_path%>><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+  <%# Nav bar end %>
+
+
+  <div id="flash">
+    <% flash.each do |key, value| %>
+      <div class="flash alert <%= alert_class(key) %>"><%= value %></div>
+    <% end %>
+  </div>
+</header>

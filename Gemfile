@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
+ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 # Bootstrap viewing and assets
 gem 'bootstrap-sass'
+
+# Login system lib
+gem 'clearance'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
