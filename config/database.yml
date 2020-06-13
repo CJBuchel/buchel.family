@@ -14,8 +14,8 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= Rails.application.credentials.dig(:development, :mysql_username) %>
-  password: <%= Rails.application.credentials.dig(:development, :mysql_password) %>
+  username: <%= Rails.application.credentials.dig(:database, :username) %>
+  password: <%= Rails.application.credentials.dig(:database, :password) %>
   socket: <%= Rails.application.credentials.dig(:database, :socket) %>
 
 development:
@@ -48,8 +48,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
   <<: *default
-  database: <%= Rails.application.credentials.dig(:database, :dev) %>
-  username: <%= Rails.application.credentials.dig(:development, :mysql_username) %>
-  password: <%= Rails.application.credentials.dig(:development, :mysql_password) %>
+  database: <%= Rails.application.credentials.dig(:database, :prod) %>
+  username: <%= Rails.application.credentials.dig(:database, :username) %>
+  password: <%= Rails.application.credentials.dig(:database, :password) %>
