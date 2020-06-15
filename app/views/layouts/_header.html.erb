@@ -13,7 +13,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
-          <li><a><span class="glyphicon glyphicon-user"></span> Signed in as: <%= current_user.email %></a></li>
+          <li><a><span class="glyphicon glyphicon-user"></span> Signed in as: <%= current_user.username %></a></li>
           <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
         <% else %>
           <li><a href=<%=sign_in_path%>><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
