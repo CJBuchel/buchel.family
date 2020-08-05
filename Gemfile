@@ -28,6 +28,10 @@ gem 'bootstrap-sass'
 # Login system lib
 gem 'clearance'
 
+# Used for scraping web
+gem 'httparty'
+gem 'nokogiri'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

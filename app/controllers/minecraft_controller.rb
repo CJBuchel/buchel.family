@@ -1,0 +1,2 @@
+class MinecraftController < ApplicationController
+end
