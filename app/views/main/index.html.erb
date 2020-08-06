@@ -1,5 +1,65 @@
-<body style="background-color:grey;">
-  <%= link_to image_tag("Blitzen.png", class: "img-responsive center-block") %> 
-  <h1 style="text-align: center">Index page</h1>
-  <h2 style="text-align: center">In Development</h2>
+<%# Main screen with links %>
+
+<body>
+
+  <div class="bannerImg-main">
+    <h1>Blitzen</h1>
+  </div>
+
+  <div class="row">
+    <div class="side">
+      <h2>Author</h2>
+      <h5>Photo of me:</h5>
+
+      <div id="CJ Sexiest man... boy? Alive" style="height:400px; background-color:grey;">
+        <img style='height: 100%; width: 100%; object-fit: contain' src=<%=asset_path('cj.jpg')%>>
+      </div>
+      <h4>Software developer with experience in IT/ICT, Robotics, Medical Tech and Computing.</h4>
+      <div id="info" style="padding:10px">
+        <h4>Studying at Curtin University and current mentor (previously student) to the First Robotics program hosted at Curtin University (CurtinFRC). I build all sorts of programs for robots, websites, games and more. Big programs, small programs, useless programs. And sometimes stuff that just never works. But I'll never stop, even if my brain tells me to.</h4>
+      </div>
+      <h3>More Text</h3>
+      <p>Lorem ipsum dolor sit ame.</p>
+      <div class="fakeimg" style="height:60px;">Image</div><br>
+      <div class="fakeimg" style="height:60px;">Image</div><br>
+      <div class="fakeimg" style="height:60px;">Image</div>
+    </div>
+    <div class="main">
+      <h2>Blitzen</h2>
+      <h5>Hosting - Cloud computing - Development Environment, Aug 6, 2020</h5>
+      <div class="fakeimg2" style="height:200px;">
+        <ul>
+          <li>Blitzen (Yes named after the reindeer) is hosting controller and mass storage array.</li>
+          <li>Designed and built for development in programming and used for cloud storage.</li>
+          <li>Hosting private git servers.</li>
+          <li>Server UI and storage access</li>
+          <li>Built in <a class="red" href="https://rubyonrails.org/">Ruby on Rails</a> using <a class="green" href="https://www.nginx.com/">Nginx</a> as a network pipeline, and all hosted on <a class="orange" href="https://ubuntu.com/download/server">Ubuntu Server.</a></li>
+        </ul>
+      </div>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <br>
+      <h2>Git Projects</h2>
+      <h5>Github Activity</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <%#
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    %>
+  </div>
 </body>
