@@ -1,0 +1,3 @@
+class Minecraft < ApplicationRecord
+
+end

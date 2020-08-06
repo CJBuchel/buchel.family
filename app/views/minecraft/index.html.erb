@@ -1,0 +1,110 @@
+<%# Main screen with links %>
+<body style="background-color:grey;">
+
+  <div class="bannerImg-minecraft"></div>
+
+  <div class="row">
+    <div class="main">
+      <h2>Blitzen</h2>
+      <h5>Hosting - Cloud computing - Development Environment, Aug 6, 2020</h5>
+      
+      <div class="row">
+        <div class="column">
+          <img style='height: 100%; width: 400px; object-fit: contain' src=<%=asset_path('minecraft_logo.jpg')%>>
+        </div>
+        <div class="column">
+          <img style='height: 100%; width: 400px; object-fit: contain' src=<%=asset_path('ftb_logo.png')%>>
+        </div>
+        <div class="column">
+        <img style='height: 100%; width: 400px; object-fit: contain' src=<%=asset_path('dd_ss.png')%>>
+        </div>
+      </div>
+      <br>
+      <%= render "minecraft/serverStatus"%>
+    </div>
+    <%#
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    %>
+    <div class="side">
+      <%=render "minecraft/serverInfo"%>
+    </div>
+  </div>
+</body>
+
+<script>
+  //uses classList, setAttribute, and querySelectorAll
+  //if you want this to work in IE8/9 youll need to polyfill these
+  (function(){
+    var d = document,
+    accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
+    setAria,
+    setAccordionAria,
+    switchAccordion,
+    touchSupported = ('ontouchstart' in window),
+    pointerSupported = ('pointerdown' in window);
+    
+    skipClickDelay = function(e){
+      e.preventDefault();
+      e.target.click();
+    }
+
+      setAriaAttr = function(el, ariaType, newProperty){
+      el.setAttribute(ariaType, newProperty);
+    };
+    setAccordionAria = function(el1, el2, expanded){
+      switch(expanded) {
+        case "true":
+          setAriaAttr(el1, 'aria-expanded', 'true');
+          setAriaAttr(el2, 'aria-hidden', 'false');
+          break;
+        case "false":
+          setAriaAttr(el1, 'aria-expanded', 'false');
+          setAriaAttr(el2, 'aria-hidden', 'true');
+          break;
+        default:
+          break;
+      }
+    };
+  //function
+  switchAccordion = function(e) {
+    console.log("triggered");
+    e.preventDefault();
+    var thisAnswer = e.target.parentNode.nextElementSibling;
+    var thisQuestion = e.target;
+    if(thisAnswer.classList.contains('is-collapsed')) {
+      setAccordionAria(thisQuestion, thisAnswer, 'true');
+    } else {
+      setAccordionAria(thisQuestion, thisAnswer, 'false');
+    }
+      thisQuestion.classList.toggle('is-collapsed');
+      thisQuestion.classList.toggle('is-expanded');
+      thisAnswer.classList.toggle('is-collapsed');
+      thisAnswer.classList.toggle('is-expanded');
+    
+      thisAnswer.classList.toggle('animateIn');
+    };
+    for (var i=0,len=accordionToggles.length; i<len; i++) {
+      if(touchSupported) {
+        accordionToggles[i].addEventListener('touchstart', skipClickDelay, false);
+      }
+      if(pointerSupported){
+        accordionToggles[i].addEventListener('pointerdown', skipClickDelay, false);
+      }
+      accordionToggles[i].addEventListener('click', switchAccordion, false);
+    }
+  })();
+</script>
