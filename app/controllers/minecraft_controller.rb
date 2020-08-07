@@ -1,22 +1,22 @@
 class MinecraftController < ApplicationController
-  def download_modpack_DDSS
+  def download_modpack_ScienceBallz
     send_file(
-      "#{Rails.root}/storage/minecraft/modpacks/DD_SS_PACK.zip",
-      filename: "DDSS_PACK.zip",
+      "#{Rails.root}/storage/minecraft/modpacks/ScienceBallz.zip",
+      filename: "ScienceBallz.zip",
       type: "application/octet-stream"
     )
   end
-  def download_resourcepack_DDSS
+  def download_resourcepack_ScienceBallz
     send_file(
-      "#{Rails.root}/storage/minecraft/resources/DD_SS_RES.zip",
-      filename: "DDSS_RES.zip",
+      "#{Rails.root}/storage/minecraft/resources/ScienceBallz_Res.zip",
+      filename: "ScienceBallz_Res.zip",
       type: "application/octet-stream"
     )
   end
-  def download_forge_DDSS
+  def download_forge_1_12_2
     send_file(
       "#{Rails.root}/storage/minecraft/forge/forge-1.12.2-14.23.5.2854-installer.jar",
-      filename: "DDSS_FORGE.jar",
+      filename: "forge_1-12-2.jar",
       type: "application/octet-stream"
     )
   end

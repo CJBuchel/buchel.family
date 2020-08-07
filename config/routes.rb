@@ -19,9 +19,9 @@ Rails.application.routes.draw do
 
   # Minecraft Downloads
   get '/minecraft/index' => "minecraft#index", as: "minecraft_index"
-  get 'download_modpack_DDSS', to: 'minecraft#download_modpack_DDSS'
-  get 'download_resourcepack_DDSS', to: 'minecraft#download_resourcepack_DDSS'
-  get 'download_forge_DDSS', to: 'minecraft#download_forge_DDSS'
+  get 'download_modpack_ScienceBallz', to: 'minecraft#download_modpack_ScienceBallz'
+  get 'download_resourcepack_ScienceBallz', to: 'minecraft#download_resourcepack_ScienceBallz'
+  get 'download_forge_1_12_2', to: 'minecraft#download_forge_1_12_2'
 
 
   # Landing
