@@ -17,10 +17,11 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   get '/main/index' => "main#index", as: "main_index"
 
-  # Minecraft
+  # Minecraft Downloads
   get '/minecraft/index' => "minecraft#index", as: "minecraft_index"
   get 'download_modpack_DDSS', to: 'minecraft#download_modpack_DDSS'
   get 'download_resourcepack_DDSS', to: 'minecraft#download_resourcepack_DDSS'
+  get 'download_forge_DDSS', to: 'minecraft#download_forge_DDSS'
 
 
   # Landing
