@@ -22,8 +22,9 @@ sudo cp ~/buchel.family/nginxTemplate /etc/nginx/sites-enabled/buchel.family
 
 # Setting up letsencrypt
 echo "SSL"
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt install python-certbot-nginx
+# sudo add-apt-repository ppa:certbot/certbot
+# sudo apt install python-certbot-nginx
+sudo apt install certbot python3-certbot-nginx
 
 sudo nginx -t
 sudo systemctl reload nginx
