@@ -31,7 +31,7 @@ sudo sed -i '/passenger_ruby/c\passenger_ruby ~/.rbenv/shims/ruby;' /etc/nginx/c
 # Setting up nginx using template
 sudo service nginx start
 sudo rm /etc/nginx/sites-enabled/default
-sudo cp ~/buchel.family/nginxTemplate /etc/nginx/sites-enabled/buchel.family
+sudo cp nginxTemplate /etc/nginx/sites-enabled/buchel.family
 
 # logjam prevention
 ( cd ~/; openssl dhparam -out dhparams.pem 2048 )
