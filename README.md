@@ -6,6 +6,9 @@
   
   #### In Development
 
+  ### For setup
+  run `sudo wget -qO - https://github.com/CJBuchel/buchel.family/blob/master/bootstrap.sh?raw=1 | bash`
+
 - Ruby on Rails Framework
   - Running on a linux server using nginx coupled with passenger module to control and run ruby on rails application.
   
