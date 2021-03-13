@@ -1,3 +1,0 @@
-#!/bin/sh
-echo "starting rails server"
-sudo service nginx start
