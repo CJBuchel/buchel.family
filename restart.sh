@@ -1,5 +1,5 @@
 #!/bin/sh
-./stop
-./start
+./stop.sh
+./start.sh
 
 sudo service nginx reload

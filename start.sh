@@ -12,3 +12,4 @@ rake assets:precompile
 
 
 sudo service nginx start
+echo "Webserver Started"
